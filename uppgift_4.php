@@ -37,21 +37,22 @@
 <?php
 
 session_start();
+define("SESSIONKEY", "textarea");
 
 $textArea = (isset($_POST['textinput'])) ? $_POST['textinput'] : false;
 
 // If submitted
 if (isset($_POST['submit'])) {
     if(isset($_POST['destroy']) && $_POST['destroy'] = "destroySession"){
-        unset($_SESSION['textArea']);
+        unset($_SESSION[SESSIONKEY]);
     }else{
-        $_SESSION["textArea"] = $textArea;
+        $_SESSION[SESSIONKEY] = $textArea;
     }
 }
 ?>
 
 <form action="uppgift_4.php" method="post">
-    <textarea name="textinput" placeholder="Type text here" style="height: 50rem; width: 90%;"><?php if(isset($_SESSION["textArea"])) echo $_SESSION["textArea"]?></textarea><br>
+    <textarea name="textinput" placeholder="Type text here" style="height: 50rem; width: 90%;"><?php if(isset($_SESSION[SESSIONKEY])) echo $_SESSION[SESSIONKEY]?></textarea><br>
     <label for="destroy">Delete session</label>
     <input type="radio" id="destroy" name="destroy" value="destroySession"><br>
     <input type="submit" name="submit" value="Skicka in">
