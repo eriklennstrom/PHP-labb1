@@ -2,7 +2,7 @@
 <html lang="sv">
 <head>
 
-    <title>Labb 1_0 - Formulär - Mall</title>
+    <title>Labb 1_0 - Uppgift 2</title>
     <meta charset="utf-8">
 
     <!-- Skriv er grupp och namn som meta-taggar här -->
